@@ -9,7 +9,8 @@ function App() {
 
 
 
-        <Compteur />
+        <Compteur /><br/>
+        <TestListe/>
     </div>
   );
 }
@@ -32,6 +33,7 @@ function Compteur(){
   //Bien sur un compteur pour un test c'est toujours bien
   const [num, SetNum] = useState(0);
 
+  //Fonction en minuscule et compenant en maj
   function add(){
       SetNum(num + 1);
   }
@@ -44,5 +46,39 @@ function Compteur(){
   )
   
 }
+
+function TestListe(){
+  
+  const [carte, SetCarte] = useState([]); //CamelCase toujours normalement?
+  
+  const colorPal = ["Pique", "Coeur", "Trefles", "Carreau"];
+  
+
+  function add(){
+    let c = {
+      val : Math.ceil(Math.random()*10),
+      color : colorPal[Math.floor(Math.random()*4)]
+    }
+    SetCarte([...carte, c])
+  }
+
+  return(
+    <div>
+      <button onClick={add}>Add Random</button>
+      {
+      carte.map((val, key) => {
+          return <>{val.val} : {val.color}</>
+      }
+      )}
+    </div>
+  )
+}
+
+
+
+
+
+
+
 
 export default App;
