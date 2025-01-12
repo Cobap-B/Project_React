@@ -1,7 +1,31 @@
+.Classic{
+    color: #ccc;
+}
+
+.Dark{
+    color: #000;
+}
+
+.card-button{
+
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #18385a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+    
+      
+}
+
 .card-container{
     display: flex;
-    flex-wrap: wrap; /* Permet d'aller à la ligne si les cartes débordent */
-    gap: 10px; /* Ajoute un espacement entre les cartes */
+    flex-wrap: wrap; 
+    gap: 10px; 
     justify-content: flex-start;
     
 }
@@ -19,19 +43,12 @@
     color : #fff;
 }
 
-.Pique{  
-    box-shadow: 2px 3px 2px 1px #000;
-    background-color: #000;
-}
-.Carreau{
-    box-shadow: 2px 3px 2px 1px #c30303;
-    background-color: #c30303;
-}
-.Trefles{
-    box-shadow: 2px 3px 2px 1px #282828;
-    background-color: #282828;
-}
-.Coeur{
-    box-shadow: 2px 3px 2px 1px #ff0101;
-    background-color: #ff0101;
-}
+.PiqueLight{color: #000;}
+.CarreauLight{color: #c30303;}
+.TreflesLight{color: #282828;}
+.CoeurLight{color: #ff0101;}
+
+.PiqueClassic{background-color: #000;}
+.CarreauClassic{background-color: #c30303;}
+.TreflesClassic{background-color: #282828;}
+.CoeurClassic{background-color: #ff0101;}
