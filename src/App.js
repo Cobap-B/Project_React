@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
@@ -6,11 +6,10 @@ function App() {
     <div className="App">
         <BasiqueText txt="Je suis étudiant en 2 ème année" />
 
-
-
-
         <Compteur /><br/>
         <TestListe/>
+
+        <TestEffect/>
     </div>
   );
 }
@@ -63,17 +62,31 @@ function TestListe(){
   }
 
   return(
-    <div>
-      <button onClick={add}>Add Random</button>
+    <div >
+      <button onClick={add}>Add Card</button>
+      <ul className='card-container'>
       {
       carte.map((val, key) => {
-          return <>{val.val} : {val.color}</>
+          return <li className={'card '+val.color} key={key}> {val.val} : {val.color} </li>
+      })
       }
-      )}
+      </ul>
     </div>
   )
 }
 
+
+function TestEffect(){
+  useEffect(()=>{
+    console.log("Echo à la création")
+  },[])
+
+  useEffect(()=>{
+    console.log("Echo à chaque update")
+  })
+
+  return <></>
+}
 
 
 

@@ -1,0 +1,37 @@
+.card-container{
+    display: flex;
+    flex-wrap: wrap; /* Permet d'aller à la ligne si les cartes débordent */
+    gap: 10px; /* Ajoute un espacement entre les cartes */
+    justify-content: flex-start;
+    
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 3px 2px 1px #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100px;
+    height: 180px;
+    border: solid 1px #eee;
+    color : #fff;
+}
+
+.Pique{  
+    box-shadow: 2px 3px 2px 1px #000;
+    background-color: #000;
+}
+.Carreau{
+    box-shadow: 2px 3px 2px 1px #c30303;
+    background-color: #c30303;
+}
+.Trefles{
+    box-shadow: 2px 3px 2px 1px #282828;
+    background-color: #282828;
+}
+.Coeur{
+    box-shadow: 2px 3px 2px 1px #ff0101;
+    background-color: #ff0101;
+}
