@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
 import Test from './Part/Test';
 import Game from './Part/Game';
+import Memory from './Part/MemoryGame';
 import './CSS/App.css';
 
 
@@ -13,13 +14,16 @@ function App() {
           <nav>
             <ul>
               <li><Link to="/test">Test</Link></li>
-              <li><Link to="/game">Game</Link></li>
+              <li><Link to="/cardGame">Game</Link></li>
+              <li><Link to="/memoryGame">Memory</Link></li>
             </ul>
           </nav>
 
           <Routes>
             <Route path="/test" element={<Test />} />
-            <Route path="/game" element={<Game />} />
+            <Route path="/cardGame" element={<Game />} />
+            <Route path="/memoryGame" element={<Memory />} />
+            <Route path="*" element={<h1>404 not found !</h1>} />
           </Routes>
         </div>
 
@@ -28,11 +32,6 @@ function App() {
     </div>
   );
 }
-
-
-
-
-
 
 
 

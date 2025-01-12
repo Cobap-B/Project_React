@@ -1,12 +1,15 @@
-import { useEffect} from 'react';
+import { useEffect, useState } from 'react';
 import Compteur from '../Compenent/Compteur';
 
 function Test() {
+
   return (
     <>
-      <BasiqueText txt="Je suis étudiant en 2 ème année" />
+      <BasiqueText txt="Ca marche : ♥️ ♦️ ♣️ ♠️" />
       <Compteur /><br />
       <TestEffect />
+
+
     </>
   )
 }
@@ -14,26 +17,42 @@ function Test() {
 
 
 function BasiqueText(props) {
-    return (
-      <>
-        <p>{props.txt}</p>
-      </>
-    )
-  }
-  
-  
+  return (
+    <>
+      <p>{props.txt}</p>
+    </>
+  )
+}
+
+
 
 function TestEffect() {
-    useEffect(() => {
-      console.log("Echo à la création")
-    }, [])
-  
-    useEffect(() => {
-      console.log("Echo à chaque update")
-    })
-  
-    return <></>
+
+  const [joke, SetJoke] = useState({});
+
+  function generate() {
+
+    fetch("https://official-joke-api.appspot.com/random_joke")
+      .then((res) => res.json())
+      .then((data) => SetJoke(data));
+
   }
-  
+
+
+  useEffect(() => {
+    generate();
+  }, [])
+
+  useEffect(() => {
+    console.log("Echo à chaque update")
+  })
+
+  return (<div className='joke'>
+    <h1>{joke.setup}</h1>
+    <h2>{joke.punchline}</h2>
+    <button onClick={generate}>Generate JOKE</button>
+  </div>)
+}
+
 
 export default Test;

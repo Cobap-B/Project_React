@@ -22,6 +22,13 @@ function TestListe() {
   const [carte, SetCarte] = useState([]); //CamelCase toujours normalement?
   const colorPal = ["Pique", "Coeur", "Trefles", "Carreau"];
   const head = ["Valet", "Reine", "Roi"];
+  const icon = {
+    "Pique" : "♠️",
+    "Trefles" : "♣️",
+    "Carreau" : "♦️",
+    "Coeur" : "♥️",
+    "Gold" : "🎀"
+  }
 
   const theme = useContext(ThemeCard);
 
@@ -52,7 +59,7 @@ function TestListe() {
         {
           carte.map((val, key) => {
             let style = 'card ' + val.color + theme.theme;
-            return <li className={style} key={key}> {val.val} <br/> {val.color} </li>
+            return <li className={style} key={key}> {val.val} <br/> {val.color} <br/> {icon[val.color]} </li>
           })
         }
       </ul>

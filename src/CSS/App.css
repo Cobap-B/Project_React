@@ -27,3 +27,31 @@ body{
     margin: 0;
     box-sizing: border-box;
 }
+
+button{
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #CC2936;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);   
+}
+
+.compteur, p{
+    margin: 0;
+    color : #fff;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.joke{
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+

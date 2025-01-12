@@ -57,14 +57,14 @@
 }
 
 .PiqueLight{color: #000;}
-.CarreauLight{color: #c30303;}
+.CarreauLight{color: #a50505;}
 .TreflesLight{color: #282828;}
-.CoeurLight{color: #ff0101;}
+.CoeurLight{color: #de0c0c;}
 
 .PiqueClassic{background-color: #000;}
-.CarreauClassic{background-color: #c30303;}
+.CarreauClassic{background-color: #a50505;}
 .TreflesClassic{background-color: #282828;}
-.CoeurClassic{background-color: #ff0101;}
+.CoeurClassic{background-color: #de0c0c;}
 
 .GoldClassic{
     background-color: goldenrod;
