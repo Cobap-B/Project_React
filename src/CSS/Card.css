@@ -65,3 +65,12 @@
 .CarreauClassic{background-color: #c30303;}
 .TreflesClassic{background-color: #282828;}
 .CoeurClassic{background-color: #ff0101;}
+
+.GoldClassic{
+    background-color: goldenrod;
+    color: #000;
+}
+.GoldLight{
+    color: goldenrod;
+}
+

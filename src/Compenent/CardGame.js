@@ -21,26 +21,38 @@ function TestListe() {
 
   const [carte, SetCarte] = useState([]); //CamelCase toujours normalement?
   const colorPal = ["Pique", "Coeur", "Trefles", "Carreau"];
+  const head = ["Valet", "Reine", "Roi"];
 
   const theme = useContext(ThemeCard);
 
   function add() {
+    let v = Math.ceil(Math.random() * 13);
+    if (v>10){
+      v = head[v-11];
+    }
     let c = {
-      val: Math.ceil(Math.random() * 10),
+      val: v,
       color: colorPal[Math.floor(Math.random() * 4)]
+    }
+
+    if (Math.round(Math.random()*100) === 1){
+      c = {val : "Joker", color : "Gold"};
     }
     SetCarte([c,...carte])
   }
 
+ 
 
+  //{carte[0].val} : {carte[0].color}
   return (
     <div className='c'>
       <button className='card-button' onClick={add}>Add Card</button>
-      {carte[0].val} : {carte[0].color}
+      
       <ul className='card-container'>
         {
           carte.map((val, key) => {
-            return <li className={'card ' + val.color + theme.theme} key={key}> {val.val} <br/> {val.color} </li>
+            let style = 'card ' + val.color + theme.theme;
+            return <li className={style} key={key}> {val.val} <br/> {val.color} </li>
           })
         }
       </ul>
