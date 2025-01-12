@@ -1,31 +1,30 @@
-import { createContext, useEffect, useState } from 'react';
-import CardGame from './CardGame';
-import Compteur from './Compteur';
-import './App.css';
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
-export const ThemeCard = createContext();
+import Test from './Part/Test';
+import Game from './Part/Game';
+import './CSS/App.css';
+
 
 function App() {
-
-  const [theme, SetTheme] = useState("Classic");
-
-  function ChangeTheme(event) {
-    SetTheme(event.target.value);
-  }
-
   return (
     <div className="App">
+      <BrowserRouter>
+        <div>
+          <nav>
+            <ul>
+              <li><Link to="/test">Test</Link></li>
+              <li><Link to="/game">Game</Link></li>
+            </ul>
+          </nav>
 
-      <BasiqueText txt="Je suis étudiant en 2 ème année" />
+          <Routes>
+            <Route path="/test" element={<Test />} />
+            <Route path="/game" element={<Game />} />
+          </Routes>
+        </div>
 
-      <Compteur /><br />
+      </BrowserRouter>
 
-      <ThemeCard.Provider value={{ theme, ChangeTheme }}>
-        <CardGame />
-      </ThemeCard.Provider>
-
-
-      <TestEffect />
     </div>
   );
 }
@@ -33,28 +32,7 @@ function App() {
 
 
 
-function BasiqueText(props) {
-  return (
-    <>
-      <p>{props.txt}</p>
-    </>
-  )
-}
 
-
-
-
-function TestEffect() {
-  useEffect(() => {
-    console.log("Echo à la création")
-  }, [])
-
-  useEffect(() => {
-    console.log("Echo à chaque update")
-  })
-
-  return <></>
-}
 
 
 

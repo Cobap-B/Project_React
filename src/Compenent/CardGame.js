@@ -1,12 +1,14 @@
 import { useContext, useState } from 'react';
-import {ThemeCard} from './App';
+import {ThemeCard} from '../Part/Game';
+import '../CSS/Card.css'
 
 function CardGame() {
     return (
-        <>
-            <ThemeButton theme="Classic" />
-            <ThemeButton theme="Light" />
-
+        <>  
+            <div className='button-container'>
+              <ThemeButton theme="Classic" />
+              <ThemeButton theme="Light" />
+            </div>
             <TestListe />
         </>
     )
@@ -27,17 +29,18 @@ function TestListe() {
       val: Math.ceil(Math.random() * 10),
       color: colorPal[Math.floor(Math.random() * 4)]
     }
-    SetCarte([...carte, c])
+    SetCarte([c,...carte])
   }
 
 
   return (
-    <div className={theme.theme}>
+    <div className='c'>
       <button className='card-button' onClick={add}>Add Card</button>
+      {carte[0].val} : {carte[0].color}
       <ul className='card-container'>
         {
           carte.map((val, key) => {
-            return <li className={'card ' + val.color + theme.theme} key={key}> {val.val} : {val.color} </li>
+            return <li className={'card ' + val.color + theme.theme} key={key}> {val.val} <br/> {val.color} </li>
           })
         }
       </ul>
@@ -53,7 +56,8 @@ function ThemeButton(props) {
   
     return (
       <>
-        <button onClick={theme.ChangeTheme} value={props.theme}> {props.theme} </button>
+        <button className={theme.theme === props.theme ? "select" : "nonSelect"}
+          onClick={theme.ChangeTheme} value={props.theme}> {props.theme} </button>
       </>
     )
 }
