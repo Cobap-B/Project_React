@@ -2,6 +2,7 @@ nav {
     background-color:#0D0630  ; 
     padding: 10px 20px;
     text-align: center; 
+    user-select: none;
 }
 nav ul {
     list-style-type: none;

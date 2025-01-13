@@ -1,0 +1,26 @@
+
+.controller {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px; 
+    grid-template-rows: 100px 100px 100px 100px;  
+    gap: 10px;
+    width: max-content; 
+    margin: auto; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+}
+
+.controller p{  
+    border-radius: 16px;
+    display: flex;   
+    justify-content: center;   
+    align-items: center;       
+    font-weight: bold;   
+    font-size:20px; 
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+    user-select: none;
+    font-family: 'Press Start 2P', cursive;
+}
