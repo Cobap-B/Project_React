@@ -14,12 +14,13 @@ function App() {
           <nav>
             <ul>
               <li><Link to="/test">Test</Link></li>
-              <li><Link to="/cardGame">Game</Link></li>
+              <li><Link to="/cardGame">CardGame</Link></li>
               <li><Link to="/memoryGame">Memory</Link></li>
             </ul>
           </nav>
 
           <Routes>
+          <Route path="/" element={<Game />} />
             <Route path="/test" element={<Test />} />
             <Route path="/cardGame" element={<Game />} />
             <Route path="/memoryGame" element={<Memory />} />

@@ -11,9 +11,9 @@ function Compteur() {
   }
   return (
     <div>
-      <button onClick={() => SetNum(num - 1)}>-</button>
+      <button className='btn' onClick={() => SetNum(num - 1)}>-</button>
       <p className='compteur'>{num}</p>
-      <button onClick={add}>+</button>
+      <button className='btn' onClick={add}>+</button>
     </div>
   )
 

@@ -50,7 +50,7 @@ function TestEffect() {
   return (<div className='joke'>
     <h1>{joke.setup}</h1>
     <h2>{joke.punchline}</h2>
-    <button onClick={generate}>Generate JOKE</button>
+    <button className='btn' onClick={generate}>Generate JOKE</button>
   </div>)
 }
 
